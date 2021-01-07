@@ -220,11 +220,11 @@ def check_in(username, password):
         # print(post_dict)
 
         # 修改温度等参数
-        # for j in post_dict['updatainfo']:  # 这里获取打卡json字段的打卡信息，微信推送的json字段
-        #     if j['propertyname'] == 'temperature':  # 找到propertyname为temperature的字段
-        #         j['value'] = '36.2'  # 由于原先为null，这里直接设置36.2（根据自己学校打卡选项来）
-        #     if j['propertyname'] == '举一反三即可':
-        #         j['value'] = '举一反三即可'
+         for j in post_dict['updatainfo']:  # 这里获取打卡json字段的打卡信息，微信推送的json字段
+             if j['propertyname'] == 'temperature':  # 找到propertyname为temperature的字段
+                 j['value'] = '36.5'  # 由于原先为null，这里直接设置36.2（根据自己学校打卡选项来）
+             if j['propertyname'] == 'symptom':
+                 j['value'] = '无症状'
 
         # 修改地址，依照自己完美校园，查一下地址即可
         # post_dict['areaStr'] = '{"streetNumber":"89号","street":"建设东路","district":"","city":"新乡市","province":"河南省",' \
